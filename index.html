@@ -783,32 +783,33 @@ strong { color: #0547A9 !important; }
           <p style="font-size:.78rem;font-weight:300;line-height:1.9;color:rgba(240,237,232,.28);">Clique no botão, fale com a gente e entenda como sua agenda pode mudar em poucos dias. Direto ao ponto, sem compromisso, sem enrolação.</p>
         </div>
       </div>
-      <div class="form-box rev-r">
-        <h3>Fale com a Sublime</h3>
-        <p>Preencha e entro em contato em até 24h</p>
-        <div class="frow">
-          <div class="fg"><label>Nome</label><input type="text" placeholder="Seu nome"/></div>
-          <div class="fg"><label>Cidade / Estado</label><input type="text" placeholder="Ex: São Paulo, SP"/></div>
-        </div>
-        <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="(00) 99999-9999"/></div>
-        <div class="fg">
-          <label>Estilo de Tatuagem</label>
-          <select>
-            <option value="">Selecione seu estilo</option>
-            <option>Black &amp; Grey</option>
-            <option>Fine Line / Pontilhismo</option>
-            <option>Realismo</option>
-            <option>Aquarela</option>
-            <option>Neo Traditional</option>
-            <option>Old School</option>
-            <option>Oriental / Japonês</option>
-            <option>Geométrico</option>
-            <option>Outro</option>
-          </select>
-        </div>
-        <div class="fg"><label>Maior desafio atual</label><textarea placeholder="Ex: agenda inconsistente, clientes que pedem desconto, sem mensagens novas..."></textarea></div>
-        <button class="fsub" onclick="submitForm(this)">Atrair Clientes Todos os Dias →</button>
-      </div>
+      
+    <div class="form-box rev-r">
+  <h3>Fale com a Sublime</h3>
+  <p>Preencha e entro em contato em até 24h</p>
+  <div class="frow">
+    <div class="fg"><label>Nome</label><input type="text" id="f_nome" placeholder="Seu nome"/></div>
+    <div class="fg"><label>Cidade / Estado</label><input type="text" id="f_cidade" placeholder="Ex: São Paulo, SP"/></div>
+  </div>
+  <div class="fg"><label>WhatsApp</label><input type="tel" id="f_tel" placeholder="(00) 99999-9999"/></div>
+  <div class="fg">
+    <label>Estilo de Tatuagem</label>
+    <select id="f_estilo">
+      <option value="">Selecione seu estilo</option>
+      <option value="Black & Grey">Black &amp; Grey</option>
+      <option value="Fine Line / Pontilhismo">Fine Line / Pontilhismo</option>
+      <option value="Realismo">Realismo</option>
+      <option value="Aquarela">Aquarela</option>
+      <option value="Neo Traditional">Neo Traditional</option>
+      <option value="Old School">Old School</option>
+      <option value="Oriental / Japonês">Oriental / Japonês</option>
+      <option value="Geométrico">Geométrico</option>
+      <option value="Outro">Outro</option>
+    </select>
+  </div>
+  <div class="fg"><label>Maior desafio atual</label><textarea id="f_desafio" placeholder="Ex: agenda inconsistente, clientes que pedem desconto..."></textarea></div>
+  <button class="fsub" onclick="enviarWhatsApp(this)">Atrair Clientes Todos os Dias →</button>
+</div>
     </div>
   </div>
 </section>
