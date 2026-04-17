@@ -854,9 +854,54 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*55);obs.unobserve(e.target);}});
 },{threshold:.08});
 document.querySelectorAll('.rev,.rev-l,.rev-r').forEach(el=>obs.observe(el));
-function submitForm(btn){
-  btn.textContent='✓ Mensagem enviada!';btn.style.background='rgba(240,237,232,.2)';btn.style.color='rgba(240,237,232,.6)';btn.disabled=true;
-  setTimeout(()=>{btn.textContent='Atrair Clientes Todos os Dias →';btn.style.background='';btn.style.color='';btn.disabled=false;},4000);
+function enviarWhatsApp(btn) {
+    // 1. Coleta os valores dos campos
+    const nome = document.getElementById('f_nome').value;
+    const cidade = document.getElementById('f_cidade').value;
+    const tel = document.getElementById('f_tel').value;
+    const estilo = document.getElementById('f_estilo').value;
+    const desafio = document.getElementById('f_desafio').value;
+
+    // 2. Validação básica (não envia se o nome estiver vazio)
+    if (nome === "") {
+        alert("Por favor, preencha pelo menos o seu nome.");
+        return;
+    }
+
+    // 3. Formatação da mensagem (Limpa e organizada)
+    const mensagem = 
+        "🔥 *NOVO CONTATO - ASSESSORIA SUBLIME*" + "\n" +
+        "--------------------------------------------" + "\n\n" +
+        "👤 *Nome:* " + nome + "\n" +
+        "📍 *Cidade:* " + cidade + "\n" +
+        "📱 *WhatsApp:* " + tel + "\n" +
+        "🎨 *Estilo:* " + (estilo || "Não informado") + "\n\n" +
+        "🚨 *Maior Desafio:* " + "\n" +
+        "_" + desafio + "_" + "\n\n" +
+        "--------------------------------------------" + "\n" +
+        "✅ *Vindo do Site Oficial*";
+
+    // 4. Codifica para URL
+    const msgFormatada = encodeURIComponent(mensagem);
+
+    // 5. Seu número de WhatsApp (Troque pelo seu número com DDD e 55 na frente)
+    const seuNumero = "5573988177680"; 
+
+    // 6. Link final
+    const url = `https://wa.me/${seuNumero}?text=${msgFormatada}`;
+
+    // Estética do botão ao clicar
+    btn.textContent = '✓ Redirecionando...';
+    btn.style.background = '#25d366';
+    btn.style.color = '#fff';
+
+    // 7. Abre o WhatsApp
+    setTimeout(() => {
+        window.open(url, '_blank');
+        btn.textContent = 'Atrair Clientes Todos os Dias →';
+        btn.style.background = '';
+        btn.style.color = '';
+    }, 800);
 }
 </script>
 </body>
