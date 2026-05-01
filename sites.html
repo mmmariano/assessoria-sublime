@@ -266,6 +266,84 @@ strong { color: #0547A9 !important; }
     color: #ffffff !important;
     border-color: rgba(255,255,255,0.4) !important;
 }
+  /* Ajuste de Cores Globais para Legibilidade */
+:root {
+  --accent: #E8C96A; /* Dourado mais vivo */
+  --text-main: #f0ede8;
+  --text-muted: #a0a0a0;
+}
+
+strong { 
+  color: var(--accent) !important; 
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Refinamento da Seção PORQUE */
+#porque {
+  padding: 160px 60px;
+  background: linear-gradient(to bottom, #0e0e0e, #080808);
+  position: relative;
+}
+
+.por-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.por-p {
+  font-size: 1.1rem; /* Aumentado para melhor leitura */
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Estilização do Mockup (Visual de Vidro) */
+.site-mock {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  overflow: hidden;
+  transform: perspective(1000px) rotateY(-5deg); /* Efeito 3D suave */
+  transition: transform 0.5s ease;
+}
+
+.site-mock:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.02);
+}
+
+.mock-bar {
+  background: #1c1c1c;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mock-url {
+  background: #080808;
+  border-radius: 4px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.mock-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #080808 100%);
+  border: 1px solid rgba(232, 201, 106, 0.1);
+}
+
+.mock-conversion {
+  background: rgba(232, 201, 106, 0.1);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media(max-width:1000px){
+  .por-grid { grid-template-columns: 1fr; gap: 60px; }
+  .site-mock { transform: none; }
+}
 </style>
 </head>
 <body>
@@ -329,47 +407,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="hero-bar-label">Para tatuadores</span>
     </div>
   </div>
-</section>
-
-<!-- POR QUE -->
+</section><!-- POR QUE -->
 <section id="porque">
   <div class="por-inner">
     <div class="rev">
-      <div class="section-label">O diagnóstico</div>
-      <h2>SEM SITE,<br><span class="outline">VOCÊ DEPENDE</span><br><em>de terceiros.</em></h2>
+      <div class="section-label">O diagnóstico de autoridade</div>
+      <h2>SEU TRABALHO É ELITE,<br><span class="outline">MAS SUA PRESENÇA</span><br><em>ainda é refém.</em></h2>
     </div>
+
     <div class="por-grid">
-      <div>
-        <p class="por-p rev d1">O Instagram pode te banir. O algoritmo pode te sufocar. O WhatsApp não dá credibilidade profissional. Mas um site próprio — <strong>esse é seu território.</strong></p>
-        <p class="por-p rev d2">Mais do que isso: quando alguém chega pelo Google ou pelos Ads, <strong>o site é o primeiro lugar que ele visita</strong>. Se esse site for fraco, você perdeu o cliente ali.</p>
-        <p class="por-p rev d3">Um site bem construído faz o cliente entender seu nível <strong>antes mesmo de falar com você</strong> — e chegar já convencido, já sabendo o que quer, já disposto a pagar seu preço.</p>
+      <div class="por-text-side">
+        <p class="por-p rev d1">
+          O Instagram é uma vitrine alugada. O algoritmo pode esconder sua arte e o WhatsApp não transmite o valor real do seu traço. <strong>Um site próprio é o seu território soberano.</strong>
+        </p>
+        
+        <p class="por-p rev d2">
+          Quando um cliente busca por "Tatuador Realismo" ou "Melhor Estúdio" no Google, ele procura por <strong>segurança e profissionalismo</strong>. Se você não tem uma casa oficial, você é invisível para quem está pronto para pagar caro.
+        </p>
+
+        <p class="por-p rev d3">
+          Nossa estrutura faz o filtro por você: o cliente chega educado pelo seu portfólio, entende sua exclusividade e <strong>clica no botão de orçamento já decidido a fechar.</strong>
+        </p>
+
         <div class="por-divider"></div>
-        <p class="por-p rev d4"><strong>Isso não é um custo. É a parte do sistema que trabalha por você 24 horas.</strong></p>
+        
+        <p class="por-p rev d4" style="color: var(--text-main); font-size: 1.2rem;">
+          <strong>Isso não é um gasto. É um funcionário de elite que vende seu trabalho 24h por dia.</strong>
+        </p>
       </div>
+
       <div class="rev-r">
         <div class="site-mock">
           <div class="mock-bar">
             <div class="mock-dots">
-              <div class="mock-dot" style="background:rgba(234,67,53,.5)"></div>
-              <div class="mock-dot" style="background:rgba(251,188,5,.5)"></div>
-              <div class="mock-dot" style="background:rgba(52,168,83,.5)"></div>
+              <div class="mock-dot" style="background:#ff5f56"></div>
+              <div class="mock-dot" style="background:#ffbd2e"></div>
+              <div class="mock-dot" style="background:#27c93f"></div>
             </div>
-            <div class="mock-url">seutatuador.com.br</div>
+            <div class="mock-url">seuestudio.com.br</div>
           </div>
           <div class="mock-body">
             <div class="mock-hero">
-              <div class="mock-title">SEU NOME</div>
-              <div class="mock-sub">Tatuador Especialista · Sua Cidade</div>
-              <div class="mock-btn">Solicitar Orçamento →</div>
+              <div class="mock-title" style="font-size: 1.8rem; opacity: 1; color: #fff;">PORTFÓLIO <span style="color:var(--accent)">ELITE</span></div>
+              <div class="mock-sub" style="color: var(--text-muted); letter-spacing: 2px;">DISPONIBILIDADE DE AGENDA: MARÇO</div>
+              <div class="mock-btn" style="background: var(--accent); color: #000; font-weight: 800; border-radius: 4px;">SOLICITAR ORÇAMENTO →</div>
             </div>
             <div class="mock-grid">
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
+              <div class="mock-card" style="background: url('https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=80&w=200') center/cover;"></div>
+              <div class="mock-card" style="background: url('https://images.unsplash.com/photo-1590201782366-200021676c0f?auto=format&fit=crop&q=80&w=200') center/cover;"></div>
+              <div class="mock-card" style="background: url('https://images.unsplash.com/photo-1550537687-c91072c4792d?auto=format&fit=crop&q=80&w=200') center/cover;"></div>
             </div>
             <div class="mock-conversion">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.49a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>Contato direto → +3 orçamentos hoje</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent); margin-right: 8px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span style="color: var(--accent); font-size: 0.7rem; text-transform: uppercase; font-weight: 700;">Performance: 98% Google PageSpeed</span>
             </div>
           </div>
         </div>
